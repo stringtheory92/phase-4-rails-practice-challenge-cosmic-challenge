@@ -1,0 +1,8 @@
+class Scientist < ApplicationRecord
+    has_many :missions
+    has_many :planets, through: :missions
+
+    validates :name, presence: true, uniqueness: true
+    validates :field_of_study, presence: true
+    validates :avatar, presence: true
+end
